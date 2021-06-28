@@ -1,0 +1,37 @@
+app:
+    name: phplumen
+    code: php lumen
+    notify: aborra@ecloudcontrol.com
+
+build:
+    version: 0.4
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: phplumen-7.4
+
+deploy:
+    context: anushab7/DEV
+    replicas: 1
+    port:
+    - 80
+
+properties:
+    ##Database Section
+    DB_CONNECTION: mysql
+    DB_HOST: "mariadb-master-10-4"
+    DB_PORT: 3306
+    DB_USERNAME: wordpress
+    DB_DATABASE: wordpress
+    DB_PASSWORD:
+      vault: DB_PASSWORD
+
+    ##App Section
+    APP_NAME: Travellist
+    APP_ENV: dev
+    APP_DEBUG: true
+    APP_KEY:
+      vault: APP_KEY
+    
+    ##General Section
+    revision: 26

@@ -1,7 +1,7 @@
 app:
     name: phplumen
     code: php lumen
-    notify: aborra@ecloudcontrol.com
+    notify: eachakala@ecloudcontrol.com
 
 build:
     version: 0.4
@@ -11,7 +11,7 @@ build:
     image_template: phplumen-7.4
 
 deploy:
-    context: anushab7/DEV
+    context: eeshaachakala1/DEV
     replicas: 1
     port:
     - 80
@@ -34,4 +34,4 @@ properties:
       vault: APP_KEY
     
     ##General Section
-    revision: 33
+    revision: 34
